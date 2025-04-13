@@ -1,54 +1,69 @@
+
+/* Style principal pour GeniusCash AI inspiré du template Polo */
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Roboto Mono', monospace;
-  background-color: #f5f7fa;
-  color: #111;
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
-.header {
-  background-color: #141e30;
-  color: #fff;
+/* Barre de navigation */
+nav {
+  background-color: #212529;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav h1 {
+  color: #00D4FF;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+/* Contenu principal */
+main {
+  padding: 4rem 2rem;
   text-align: center;
-  padding: 60px 20px;
-  background-image: linear-gradient(to right, #243b55, #141e30);
 }
 
-.header h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
+h2 {
+  font-size: 2.5rem;
+  color: #007BFF;
+  margin-bottom: 1rem;
 }
 
-.header p {
-  font-size: 1.2em;
+p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+  color: #555;
 }
 
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.hero h2 {
-  font-size: 2em;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-}
-
-button#startChat {
-  background-color: #243b55;
-  color: white;
-  padding: 12px 24px;
-  font-size: 1em;
+/* Boutons */
+button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #00D4FF;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
+  color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button#startChat:hover {
-  background-color: #1d2a3a;
+button:hover {
+  background-color: #007BFF;
+}
+
+/* Footer */
+footer {
+  background-color: #212529;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.9rem;
 }
