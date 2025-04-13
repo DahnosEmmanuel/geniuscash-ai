@@ -1,70 +1,103 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeniusCash AI</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GeniusCash AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto Mono', monospace;
+      background-color: #f7f9fc;
+      color: #1a1a1a;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #00D084;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .hero {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(to right, #00D084, #1a1a1a);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero button {
+      background-color: white;
+      color: #1a1a1a;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #e6e6e6;
+    }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.875rem;
+      background-color: #1a1a1a;
+      color: white;
+      margin-top: 4rem;
+    }
+  </style>
 </head>
 <body>
-    <!-- Barre de navigation -->
-    <header>
-        <div class="logo">
-            <h1>GeniusCash AI</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#fonctionnalites">Fonctionnalités</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">GeniusCash AI</div>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Fonctionnalités</a>
+      <a href="#">IA Coach</a>
+      <a href="#">PDF Premium</a>
+      <a href="#">Connexion</a>
+    </nav>
+  </header>
 
-    <!-- Section principale -->
-    <section id="accueil">
-        <div class="intro">
-            <h2>Bienvenue sur GeniusCash AI</h2>
-            <p>Le site révolutionnaire où tu peux générer des idées de business, discuter avec notre IA et plus encore !</p>
-            <button id="chat-btn">Discute avec le Coach Business</button>
-        </div>
-    </section>
+  <section class="hero">
+    <h1>Automatise ton business avec l'IA</h1>
+    <p>Découvre des idées puissantes, génère des revenus, et retire ton argent quand tu veux.</p>
+    <button>Commencer Maintenant</button>
+  </section>
 
-    <!-- Popup chat IA -->
-    <div id="chat-popup" class="chat-popup">
-        <div class="chat-box">
-            <div id="messages"></div>
-            <textarea id="message" placeholder="Écris ton message..."></textarea>
-            <button onclick="envoyerMessage()">Envoyer</button>
-            <button id="close-chat">Fermer</button>
-        </div>
-    </div>
-
-    <!-- Section des fonctionnalités -->
-    <section id="fonctionnalites">
-        <h2>Fonctionnalités de GeniusCash AI</h2>
-        <div class="features">
-            <div class="feature-item">
-                <h3>Idées de business personnalisées</h3>
-                <p>Discute avec notre IA et génère des idées de business qui te correspondent.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Chat IA interactif</h3>
-                <p>Obtiens des conseils en temps réel avec notre IA "Coach Business".</p>
-            </div>
-            <div class="feature-item">
-                <h3>Vente de PDF Premium</h3>
-                <p>Achat de guides et astuces exclusives sur l’entrepreneuriat.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section contact -->
-    <section id="contact">
-        <h2>Contactez-nous</h2>
-        <p>Pour toute question, contactez-nous à l'adresse : <strong>support@geniuscash.ai</strong></p>
-    </section>
-
-    <script src="script.js"></script>
+  <footer>
+    © 2025 - Dahnos Daniel Emmanuel “DMAX” | Créé avec ❤️ par l’IA
+  </footer>
 </body>
 </html>
