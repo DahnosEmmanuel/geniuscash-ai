@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeniusCash AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <header>
+        <div class="logo">
+            <h1>GeniusCash AI</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section principale -->
+    <section id="accueil">
+        <div class="intro">
+            <h2>Bienvenue sur GeniusCash AI</h2>
+            <p>Le site révolutionnaire où tu peux générer des idées de business, discuter avec notre IA et plus encore !</p>
+            <button id="chat-btn">Discute avec le Coach Business</button>
+        </div>
+    </section>
+
+    <!-- Popup chat IA -->
+    <div id="chat-popup" class="chat-popup">
+        <div class="chat-box">
+            <div id="messages"></div>
+            <textarea id="message" placeholder="Écris ton message..."></textarea>
+            <button onclick="envoyerMessage()">Envoyer</button>
+            <button id="close-chat">Fermer</button>
+        </div>
+    </div>
+
+    <!-- Section des fonctionnalités -->
+    <section id="fonctionnalites">
+        <h2>Fonctionnalités de GeniusCash AI</h2>
+        <div class="features">
+            <div class="feature-item">
+                <h3>Idées de business personnalisées</h3>
+                <p>Discute avec notre IA et génère des idées de business qui te correspondent.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Chat IA interactif</h3>
+                <p>Obtiens des conseils en temps réel avec notre IA "Coach Business".</p>
+            </div>
+            <div class="feature-item">
+                <h3>Vente de PDF Premium</h3>
+                <p>Achat de guides et astuces exclusives sur l’entrepreneuriat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section contact -->
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Pour toute question, contactez-nous à l'adresse : <strong>support@geniuscash.ai</strong></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
