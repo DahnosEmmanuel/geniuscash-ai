@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Générateur IA - GeniusCash AI</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+    select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 16px;
+    }
+    button {
+      background-color: #3b82f6;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #2563eb;
+    }
+    .output {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GeniusCash AI</h1>
+    <nav>
+      <a href="home.html">Accueil</a>
+      <a href="generator.html">Générateur IA</a>
+      <a href="pdf-premium.html">PDF Premium</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="wallet.html">Portefeuille</a>
+      <a href="subscription.html">Abonnement</a>
+      <a href="login.html">Connexion</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Utilise les 50 IA intégrées</h1>
+
+    <label for="ai-type">Choisis une IA</label>
+    <select id="ai-type">
+      <option value="business">Générateur de business</option>
+      <option value="pdf">Créateur de PDF Premium</option>
+      <option value="marketing">Marketing & publicités</option>
+      <option value="revenu">Idées pour gagner de l’argent</option>
+      <option value="contenu">Créateur de contenu automatique</option>
+    </select>
+
+    <label for="prompt">Que veux-tu générer ?</label>
+    <textarea id="prompt" rows="5" placeholder="Ex: Une idée de business en ligne sans argent..."></textarea>
+
+    <button onclick="generateAI()">Lancer l’IA</button>
+
+    <div class="output" id="result">
+      <!-- Résultat généré ici -->
+    </div>
+  </div>
+
+  <script>
+    function generateAI() {
+      const type = document.getElementById('ai-type').value;
+      const prompt = document.getElementById('prompt').value;
+      const resultDiv = document.getElementById('result');
+
+      if (!prompt.trim()) {
+        resultDiv.innerHTML = '<p style="color:red;">Veuillez entrer une demande.</p>';
+        return;
+      }
+
+      // Simulation de génération IA (à connecter à une vraie API plus tard)
+      resultDiv.innerHTML = `<h3>Résultat IA (${type}) :</h3>
+        <p><em>IA en cours de génération…</em></p>
+        <p>➡️ Idée générée automatiquement en fonction de ton prompt : <strong>${prompt}</strong></p>
+        <p>💡 Exemple : Lancer une app de location de trottinettes géolocalisées.</p>`;
+    }
+  </script>
+
+</body>
+</html>
