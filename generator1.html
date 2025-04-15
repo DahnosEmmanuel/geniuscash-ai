@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GeniusCash AI - Générateur Automatique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #00ff99;
+    }
+
+    main {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    label, select, textarea, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    select, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    button {
+      background: #00ff99;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      padding: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #00cc77;
+    }
+
+    .result {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Générateur d'idées & PDF - GeniusCash AI
+  </header>
+
+  <main>
+    <label for="ia-select">Choisis une Intelligence Artificielle :</label>
+    <select id="ia-select">
+      <option value="">-- Sélectionne une IA --</option>
+      <option value="business">💼 IA Idée de Business</option>
+      <option value="pdf">📄 IA Génératrice de PDF Premium</option>
+      <option value="tiktok">📱 IA Stratégie TikTok</option>
+      <option value="crypto">🪙 IA Crypto & Trading</option>
+      <option value="freelance">👨‍💻 IA Freelance & Services</option>
+      <option value="seo">📈 IA SEO & Marketing</option>
+      <option value="email">✉️ IA Email & Funnels</option>
+      <!-- Ajoute ici les 43 autres IA personnalisées... -->
+    </select>
+
+    <label for="prompt">Entre ta demande (par exemple : "idée de business avec IA en 2025") :</label>
+    <textarea id="prompt" rows="4" placeholder="Tape ici ta demande..."></textarea>
+
+    <button onclick="generate()">Générer automatiquement</button>
+
+    <div id="output" class="result"></div>
+  </main>
+
+  <script>
+    function generate() {
+      const ia = document.getElementById("ia-select").value;
+      const prompt = document.getElementById("prompt").value;
+      const output = document.getElementById("output");
+
+      if (!ia || !prompt) {
+        output.innerHTML = "⚠️ Choisis une IA et entre ta demande.";
+        return;
+      }
+
+      output.innerHTML = "⏳ Génération en cours...";
+
+      setTimeout(() => {
+        output.innerHTML = `✅ Résultat généré par l'IA ${ia.toUpperCase()} :\n\n🚀 "${prompt}" → Voici une réponse simulée automatiquement par GeniusCash AI.\n\n💡 Cette fonctionnalité sera connectée aux vraies IA dans la version finale avec backend !`;
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
