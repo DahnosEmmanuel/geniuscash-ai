@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Portefeuille | GeniusCash AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f3f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #222;
+    }
+    .balance {
+      font-size: 2em;
+      text-align: center;
+      margin: 30px 0;
+      color: #28a745;
+    }
+    .actions {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+    .actions button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .add-btn {
+      background-color: #007bff;
+      color: white;
+    }
+    .withdraw-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+    .form-section {
+      margin-top: 40px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+    }
+    th, td {
+      border: 1px solid #eee;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f9f9f9;
+    }
+    .footer-note {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mon Portefeuille</h1>
+    <div class="balance">Solde disponible : 472,50 €</div>
+    <div class="actions">
+      <button class="add-btn">Ajouter des fonds</button>
+      <button class="withdraw-btn">Retirer mes gains</button>
+    </div>
+
+    <div class="form-section">
+      <h2>Moyen de retrait</h2>
+      <label for="method">Choisissez une méthode</label>
+      <select id="method">
+        <option>PayPal</option>
+        <option>Carte bancaire</option>
+        <option>Virement bancaire</option>
+        <option>Mobile Money</option>
+        <option>Crypto (BTC/ETH)</option>
+        <option>Google Pay / Apple Pay</option>
+        <option>Wise (TransferWise)</option>
+      </select>
+
+      <label for="details">Informations nécessaires (Email, IBAN, Adresse Crypto...)</label>
+      <input type="text" id="details" placeholder="Entrez les informations selon la méthode choisie">
+
+      <label for="amount">Montant à retirer (€)</label>
+      <input type="number" id="amount" placeholder="Ex: 100.00">
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Montant</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>14/04/2025</td>
+          <td>Ajout (PayPal)</td>
+          <td>100,00 €</td>
+          <td>Validé</td>
+        </tr>
+        <tr>
+          <td>10/04/2025</td>
+          <td>Retrait (Mobile Money)</td>
+          <td>80,00 €</td>
+          <td>En attente</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="footer-note">
+      Les retraits sont traités en 24h-72h selon la méthode sélectionnée. Assurez-vous d’avoir bien configuré vos informations.
+    </p>
+  </div>
+</body>
+</html>
