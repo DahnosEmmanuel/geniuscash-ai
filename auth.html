@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GeniusCash AI - Connexion & Inscription</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #00c9ff;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00b2e3;
+    }
+
+    .switch {
+      text-align: center;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 0.9em;
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 id="form-title">Connexion</h2>
+
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+
+    <form id="signup-form" class="hidden">
+      <input type="text" id="signup-name" placeholder="Nom complet" required>
+      <input type="email" id="signup-email" placeholder="Email" required>
+      <input type="password" id="signup-password" placeholder="Mot de passe" required>
+      <button type="submit">Créer un compte</button>
+    </form>
+
+    <p class="switch" onclick="toggleForms()">Vous n'avez pas de compte ? Inscrivez-vous</p>
+  </div>
+
+  <script type="module">
+    // Firebase SDK
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAr-e6LUMHgtir1wx6tM7K2W-pnj691RoA",
+      authDomain: "geniuscash-ai.firebaseapp.com",
+      projectId: "geniuscash-ai",
+      storageBucket: "geniuscash-ai.appspot.com",
+      messagingSenderId: "81212590697",
+      appId: "1:81212590697:web:43c0c01d239c4c076630f8",
+      measurementId: "G-MG4B33Z0NM"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Switch Forms
+    function toggleForms() {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      const title = document.getElementById('form-title');
+      const switchText = document.querySelector('.switch');
+
+      if (loginForm.classList.contains('hidden')) {
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+        title.textContent = "Connexion";
+        switchText.textContent = "Vous n'avez pas de compte ? Inscrivez-vous";
+      } else {
+        loginForm.classList.add('hidden');
+        signupForm.classList.remove('hidden');
+        title.textContent = "Inscription";
+        switchText.textContent = "Vous avez déjà un compte ? Connectez-vous";
+      }
+    }
+
+    window.toggleForms = toggleForms;
+
+    // Connexion
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("Connexion réussie !");
+          window.location.href = "generator.html";
+        })
+        .catch(error => {
+          alert("Erreur de connexion : " + error.message);
+        });
+    });
+
+    // Inscription
+    document.getElementById('signup-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("Compte créé avec succès !");
+          window.location.href = "generator.html";
+        })
+        .catch(error => {
+          alert("Erreur d'inscription : " + error.message);
+        });
+    });
+  </script>
+</body>
+</html>
