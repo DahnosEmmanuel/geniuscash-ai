@@ -1,0 +1,49 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion - GeniusCash AI</title>
+</head>
+<body>
+  <h1>Connexion / Inscription</h1>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Mot de passe">
+  
+  <button onclick="register()">S'inscrire</button>
+  <button onclick="login()">Se connecter</button>
+  <button onclick="logout()">Se déconnecter</button>
+
+  <script type="module">
+    import { registerUser, loginUser, logoutUser } from './auth.js';
+
+    window.register = async () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      try {
+        await registerUser(email, password);
+        alert("Inscription réussie !");
+      } catch (error) {
+        alert("Erreur : " + error.message);
+      }
+    };
+
+    window.login = async () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      try {
+        await loginUser(email, password);
+        alert("Connexion réussie !");
+      } catch (error) {
+        alert("Erreur : " + error.message);
+      }
+    };
+
+    window.logout = async () => {
+      await logoutUser();
+      alert("Déconnexion réussie !");
+    };
+  </script>
+</body>
+</html>
